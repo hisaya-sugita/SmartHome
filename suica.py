@@ -17,7 +17,7 @@ target_req_suica = nfc.clf.RemoteTarget("212F")
 # 0003(Suica)
 target_req_suica.sensf_req = bytearray.fromhex("0000030000")
 
-print 'Suica waiting...'
+print "Suica waiting..."
 while True:
     # USBに接続されたNFCリーダに接続してインスタンス化
     clf = nfc.ContactlessFrontend('usb')
@@ -34,9 +34,9 @@ while True:
 
         #IDmを取り出す
         idm = binascii.hexlify(tag.idm)
-        print 'Suica detected. idm = ' + idm
+        print "Suica detected. idm = " + idm
 
-        print 'sleep ' + TIME_wait + ' seconds'
+        print "sleep " + str(TIME_wait) + " seconds"
         time.sleep(TIME_wait)
     #end if
 
